@@ -8,7 +8,9 @@ import javax.jms.*;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import java.net.URI;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.Properties;
 import java.util.UUID;
 
@@ -21,7 +23,7 @@ public class Main {
     public static void main(String[] args) throws JMSException, InterruptedException, NamingException {
 
         // Create a new WebSocket object
-        for (int i = 0; i < 200; i++) {
+        for (int i = 0; i < 350; i++) {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
@@ -56,7 +58,7 @@ public class Main {
 
         if (connectionFactory instanceof JmsConnectionFactory) {
             try {
-                ((JmsConnectionFactory) connectionFactory).setGatewayLocation(new URI("ws://10.2.56.25:8001/jms"));
+                ((JmsConnectionFactory) connectionFactory).setGatewayLocation(new URI("ws://localhost:8001/jms"));
                 WebSocketFactory webSocketFactory = ((JmsConnectionFactory) connectionFactory).getWebSocketFactory();
                 webSocketFactory.setDefaultRedirectPolicy(HttpRedirectPolicy.SAME_DOMAIN);
             } catch (Exception e) {
@@ -86,25 +88,27 @@ public class Main {
 
         MessageConsumer consumer = theGatewaySession.createConsumer(jmsTopic);
 
-        char[] data = new char[1024];
-        Arrays.fill(data, 'a');
-        String str = new String(data);
+        //char[] data = new char[1024];
+        //Arrays.fill(data, 'a');
+        //String str = new String(data);
+        String strMessage = "Message from UBUNTU";
 
-        MessageProducer producer = theGatewaySession.createProducer(jmsTopic);
-        BytesMessage bytesMessage = theGatewaySession.createBytesMessage();
-        bytesMessage.writeUTF(str);
+        //MessageProducer producer = theGatewaySession.createProducer(jmsTopic);
+        //BytesMessage bytesMessage = theGatewaySession.createBytesMessage();
+        //bytesMessage.writeUTF(str);
 
-        TextMessage message = theGatewaySession.createTextMessage(hexDump(str.getBytes()) + Thread.currentThread());
+        TextMessage message = theGatewaySession.createTextMessage(strMessage);
         consumer.setMessageListener(new MessageListener() {
             @Override
             public void onMessage(Message message) {
                 try {
-                    BytesMessage bytesMessage = (BytesMessage)message;
+                    //BytesMessage bytesMessage = (BytesMessage)message;
 
-                    long len = bytesMessage.getBodyLength();
-                    byte b[] = new byte[(int)len];
-                    bytesMessage.readBytes(b);
-                    System.out.println("MESSAGE: " + hexDump(b).length());
+                    //long len = bytesMessage.getBodyLength();
+                    //byte b[] = new byte[(int)len];
+                    //bytesMessage.readBytes(b);
+                    //System.out.println("MESSAGE: " + hexDump(b).length() + " -> " + timestampt());
+                    System.out.println("MESSAGE: " + ((TextMessage) message).getText() + " -> "  + timestampt());
                 } catch (JMSException e) {
                     e.printStackTrace();
                 }
@@ -126,10 +130,13 @@ public class Main {
             }
         });*/
         //DEBUG - Iterator to sent 3 messages
+
+        MessageProducer producer = theGatewaySession.createProducer(jmsTopic);
+
         while(true) {
             //producer.send(message);
 
-            producer.send(bytesMessage);
+            producer.send(message);
         }
     }
 
@@ -143,6 +150,12 @@ public class Main {
             out.append(Integer.toHexString(b[i]));
         }
         return out.toString();
+    }
+
+    private static String timestampt(){
+        String timeStamp;
+        Date date= new java.util.Date();
+        return timeStamp = new SimpleDateFormat("HH:mm:ss.ms").format(new Date());
     }
 
 }
