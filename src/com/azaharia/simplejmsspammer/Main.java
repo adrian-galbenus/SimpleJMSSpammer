@@ -23,16 +23,17 @@ public class Main {
     public static void main(String[] args) throws JMSException, InterruptedException, NamingException {
 
         // Create a new WebSocket object
-        for (int i = 0; i < 350; i++) {
+        for (int i = 0; i < 100; i++) {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
                     try {
                         connectAndSend();
-                        System.out.println(Thread.currentThread());
                     } catch (NamingException e) {
                         e.printStackTrace();
                     } catch (JMSException e) {
+                        e.printStackTrace();
+                    } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -40,7 +41,7 @@ public class Main {
         }
     }
 
-    private static void connectAndSend() throws NamingException, JMSException {
+    private static void connectAndSend() throws NamingException, JMSException, InterruptedException {
 
 
         JmsConnectionFactory theGatewayConnectionFactory = null;
@@ -58,7 +59,7 @@ public class Main {
 
         if (connectionFactory instanceof JmsConnectionFactory) {
             try {
-                ((JmsConnectionFactory) connectionFactory).setGatewayLocation(new URI("ws://localhost:8001/jms"));
+                ((JmsConnectionFactory) connectionFactory).setGatewayLocation(new URI("ws://10.2.56.25:8001/jms"));
                 WebSocketFactory webSocketFactory = ((JmsConnectionFactory) connectionFactory).getWebSocketFactory();
                 webSocketFactory.setDefaultRedirectPolicy(HttpRedirectPolicy.SAME_DOMAIN);
             } catch (Exception e) {
@@ -84,6 +85,7 @@ public class Main {
 
         theGatewayConnection.start();
 
+        //Queue jmsTopic = (Queue) ctx.lookup("/queue/Q1");
         Topic jmsTopic = (Topic) ctx.lookup("/topic/destination");
 
         MessageConsumer consumer = theGatewaySession.createConsumer(jmsTopic);
@@ -91,7 +93,7 @@ public class Main {
         //char[] data = new char[1024];
         //Arrays.fill(data, 'a');
         //String str = new String(data);
-        String strMessage = "Message from UBUNTU";
+        String strMessage = "Message from MIHAIZ";
 
         //MessageProducer producer = theGatewaySession.createProducer(jmsTopic);
         //BytesMessage bytesMessage = theGatewaySession.createBytesMessage();
@@ -132,11 +134,12 @@ public class Main {
         //DEBUG - Iterator to sent 3 messages
 
         MessageProducer producer = theGatewaySession.createProducer(jmsTopic);
-
+        System.out.println("SENDING MESSAGES: " + Thread.currentThread() + timestampt());
         while(true) {
             //producer.send(message);
 
             producer.send(message);
+            Thread.sleep(1000);
         }
     }
 
