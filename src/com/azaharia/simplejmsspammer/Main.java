@@ -4,10 +4,13 @@ package com.azaharia.simplejmsspammer;
 import com.kaazing.gateway.jms.client.*;
 import com.kaazing.net.http.HttpRedirectPolicy;
 import com.kaazing.net.ws.WebSocketFactory;
+import com.sun.jndi.toolkit.url.Uri;
+
 import javax.jms.*;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
@@ -21,27 +24,35 @@ public class Main {
 
 
     public static void main(String[] args) throws JMSException, InterruptedException, NamingException {
+        ValidatingArgs validate;
+        if(args.length ==3) {
+            validate = new ValidatingArgs(args[0], args[1], args[2]);
+        } else{
+            throw new IllegalArgumentException("Invalid number of arguments: correct usage of program is : [nr. of connections]  [gateway URI]  [\"message to be sent\"]");
+        }
 
         // Create a new WebSocket object
-        for (int i = 0; i < 100; i++) {
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        connectAndSend();
-                    } catch (NamingException e) {
-                        e.printStackTrace();
-                    } catch (JMSException e) {
-                        e.printStackTrace();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
+        if(validate.isValid()) {
+            for (int i = 0; i < Integer.parseInt(args[0]); i++) {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            connectAndSend(args[1], args[2]);
+                        } catch (NamingException e) {
+                            e.printStackTrace();
+                        } catch (JMSException e) {
+                            e.printStackTrace();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                     }
-                }
-            }).start();
+                }).start();
+            }
         }
     }
 
-    private static void connectAndSend() throws NamingException, JMSException, InterruptedException {
+    private static void connectAndSend(String gwUri, String gwMessage) throws NamingException, JMSException, InterruptedException {
 
 
         JmsConnectionFactory theGatewayConnectionFactory = null;
@@ -59,7 +70,7 @@ public class Main {
 
         if (connectionFactory instanceof JmsConnectionFactory) {
             try {
-                ((JmsConnectionFactory) connectionFactory).setGatewayLocation(new URI("ws://10.2.56.25:8001/jms"));
+                ((JmsConnectionFactory) connectionFactory).setGatewayLocation(new URI(gwUri));
                 WebSocketFactory webSocketFactory = ((JmsConnectionFactory) connectionFactory).getWebSocketFactory();
                 webSocketFactory.setDefaultRedirectPolicy(HttpRedirectPolicy.SAME_DOMAIN);
             } catch (Exception e) {
@@ -93,7 +104,7 @@ public class Main {
         //char[] data = new char[1024];
         //Arrays.fill(data, 'a');
         //String str = new String(data);
-        String strMessage = "Message from MIHAIZ";
+        String strMessage = gwMessage;
 
         //MessageProducer producer = theGatewaySession.createProducer(jmsTopic);
         //BytesMessage bytesMessage = theGatewaySession.createBytesMessage();
