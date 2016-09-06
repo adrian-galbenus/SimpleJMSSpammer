@@ -7,16 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="252b688b-0996-4480-b73c-7fb609e72365" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/azaharia/simplejmsspammer/ValidatingArgs.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/SimpleJMSSpammer_jar/SimpleJMSSpammerEMS.7z" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/SimpleJMSSpammer_jar/SimpleJMSSpammeraagain.7z" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/SimpleJMSSpammer_jar/SimpleJMSSpammer.jar" afterPath="$PROJECT_DIR$/out/artifacts/SimpleJMSSpammer_jar/SimpleJMSSpammer.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SimpleJMSSpammer/com/azaharia/simplejmsspammer/Main$1.class" afterPath="$PROJECT_DIR$/out/production/SimpleJMSSpammer/com/azaharia/simplejmsspammer/Main$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SimpleJMSSpammer/com/azaharia/simplejmsspammer/Main$2.class" afterPath="$PROJECT_DIR$/out/production/SimpleJMSSpammer/com/azaharia/simplejmsspammer/Main$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SimpleJMSSpammer/com/azaharia/simplejmsspammer/Main$3.class" afterPath="$PROJECT_DIR$/out/production/SimpleJMSSpammer/com/azaharia/simplejmsspammer/Main$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SimpleJMSSpammer/com/azaharia/simplejmsspammer/Main.class" afterPath="$PROJECT_DIR$/out/production/SimpleJMSSpammer/com/azaharia/simplejmsspammer/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/azaharia/simplejmsspammer/Main.java" afterPath="$PROJECT_DIR$/src/com/azaharia/simplejmsspammer/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/azaharia/simplejmsspammer/ValidatingArgs.java" afterPath="$PROJECT_DIR$/src/com/azaharia/simplejmsspammer/ValidatingArgs.java" />
     </list>
     <ignored path="SimpleJMSSpammer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,11 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/azaharia/simplejmsspammer/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="28" column="62" selection-start-line="28" selection-start-column="62" selection-end-line="28" selection-end-column="62" />
+            <state relative-caret-position="-707">
+              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -52,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ValidatingArgs.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ValidatingArgs.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/azaharia/simplejmsspammer/ValidatingArgs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="71" column="81" selection-start-line="71" selection-start-column="81" selection-end-line="71" selection-end-column="81" />
+            <state relative-caret-position="204">
+              <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -449,7 +441,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -495,30 +487,30 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/azaharia/simplejmsspammer/ValidatingArgs.java</url>
-          <line>62</line>
+          <line>58</line>
           <properties />
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/azaharia/simplejmsspammer/ValidatingArgs.java</url>
-          <line>61</line>
+          <line>57</line>
           <properties />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/azaharia/simplejmsspammer/ValidatingArgs.java</url>
-          <line>63</line>
+          <line>59</line>
           <properties />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/com/azaharia/simplejmsspammer/ValidatingArgs.java</url>
-          <line>58</line>
+          <line>54</line>
           <properties class="com.azaharia.simplejmsspammer.ValidatingArgs" />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="11" />
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -573,20 +565,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/azaharia/simplejmsspammer/ValidatingArgs.java">
+    <entry file="file://$PROJECT_DIR$/src/com/azaharia/simplejmsspammer/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="71" column="81" selection-start-line="71" selection-start-column="81" selection-end-line="71" selection-end-column="81" />
+        <state relative-caret-position="-707">
+          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/azaharia/simplejmsspammer/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/com/azaharia/simplejmsspammer/ValidatingArgs.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="28" column="62" selection-start-line="28" selection-start-column="62" selection-end-line="28" selection-end-column="62" />
+        <state relative-caret-position="204">
+          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

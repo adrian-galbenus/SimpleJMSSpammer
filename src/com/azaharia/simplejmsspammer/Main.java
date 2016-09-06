@@ -4,15 +4,12 @@ package com.azaharia.simplejmsspammer;
 import com.kaazing.gateway.jms.client.*;
 import com.kaazing.net.http.HttpRedirectPolicy;
 import com.kaazing.net.ws.WebSocketFactory;
-import com.sun.jndi.toolkit.url.Uri;
 
 import javax.jms.*;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.Properties;
 import java.util.UUID;

@@ -1,20 +1,16 @@
 package com.azaharia.simplejmsspammer;
 
-
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import static java.lang.System.exit;
 
 /**
  * Created by Zaharia Costin-Alexandru, email: zaharia.c.alexandru@gmail.com on 9/6/2016.
  */
+
 public class ValidatingArgs {
     private String nrConn = "";
-    private String gwURI = "ws://localhost:8001/jms";
-    private String gwMessage = "Standard message from client";
+    private String gwURI = "";
+    private String gwMessage = "";
 
     public ValidatingArgs(String nrConn, String gwUri, String gwMessage){
         this.nrConn = nrConn;
