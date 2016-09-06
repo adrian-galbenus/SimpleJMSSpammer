@@ -7,8 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="252b688b-0996-4480-b73c-7fb609e72365" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/azaharia/simplejmsspammer/Main.java" afterPath="$PROJECT_DIR$/src/com/azaharia/simplejmsspammer/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/azaharia/simplejmsspammer/ValidatingArgs.java" afterPath="$PROJECT_DIR$/src/com/azaharia/simplejmsspammer/ValidatingArgs.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/azaharia/simplejmsspammer/TypeOf.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SimpleJMSSpammer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,7 +32,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/azaharia/simplejmsspammer/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-707">
@@ -44,7 +44,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ValidatingArgs.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ValidatingArgs.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/azaharia/simplejmsspammer/ValidatingArgs.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
@@ -56,12 +56,23 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="TypeOf.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/azaharia/simplejmsspammer/TypeOf.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -78,6 +89,7 @@
       <list>
         <option value="$PROJECT_DIR$/src/com/azaharia/simplejmsspammer/Main.java" />
         <option value="$PROJECT_DIR$/src/com/azaharia/simplejmsspammer/ValidatingArgs.java" />
+        <option value="$PROJECT_DIR$/src/com/azaharia/simplejmsspammer/TypeOf.java" />
       </list>
     </option>
   </component>
@@ -441,7 +453,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -565,20 +577,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/azaharia/simplejmsspammer/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/com/azaharia/simplejmsspammer/ValidatingArgs.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-707">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        <state relative-caret-position="204">
+          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/azaharia/simplejmsspammer/ValidatingArgs.java">
+    <entry file="file://$PROJECT_DIR$/src/com/azaharia/simplejmsspammer/TypeOf.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+        <state relative-caret-position="153">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/azaharia/simplejmsspammer/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-707">
+          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
