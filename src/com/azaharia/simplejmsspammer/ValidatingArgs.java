@@ -8,18 +8,12 @@ import java.util.regex.Pattern;
  */
 
 public class ValidatingArgs {
-    private String nrConn = "";
-    private String gwURI = "";
-    private String gwMessage = "";
 
-    public ValidatingArgs(String nrConn, String gwUri, String gwMessage){
-        this.nrConn = nrConn;
-        this.gwURI = gwUri;
-        this.gwMessage = gwMessage;
+    public ValidatingArgs(){
     }
 
 
-    public boolean isValid(){
+    public boolean isValid(String nrConn, String gwUri, String gwMessage){
         if(!isInt(nrConn)){
             System.out.println("This is not an integer number!");
             return false;
@@ -28,7 +22,7 @@ public class ValidatingArgs {
             System.out.println("The number is not in the range (1,600]");
             return false;
         }
-        if(!regexUri(gwURI)){
+        if(!regexUri(gwUri)){
             System.out.println("The URI you have entered is not valid!");
             return false;
         }
@@ -52,18 +46,6 @@ public class ValidatingArgs {
         return true;
     }
 
-/*    private boolean isValidateURI(String gwUri) {
-        final URI uri;
-        try {
-            uri = new URI(gwUri);
-        } catch (URISyntaxException e1) {
-            System.out.println("DOES IT REACH THIS?!");
-            return false;
-        }
-        return true;
-    }*/
-
-
     private boolean regexUri(String gwUri){
         String regex = "^(ws):[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]";
         if(!IsMatch(gwUri,regex)){
@@ -71,7 +53,6 @@ public class ValidatingArgs {
         }
         return true;
     }
-
 
     private static boolean IsMatch(String s, String pattern) {
         try {

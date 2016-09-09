@@ -23,13 +23,13 @@ public class Main {
     public static void main(String[] args) throws JMSException, InterruptedException, NamingException {
         ValidatingArgs validate;
         if(args.length ==3) {
-            validate = new ValidatingArgs(args[0], args[1], args[2]);
+            validate = new ValidatingArgs();
         } else{
             throw new IllegalArgumentException("Invalid number of arguments: correct usage of program is : [nr. of connections]  [gateway URI]  [\"message to be sent\"]");
         }
 
         // Create a new WebSocket object
-        if(validate.isValid()) {
+        if(validate.isValid(args[0], args[1], args[2])) {
             for (int i = 0; i < Integer.parseInt(args[0]); i++) {
                 new Thread(new Runnable() {
                     @Override
@@ -145,9 +145,8 @@ public class Main {
         System.out.println("SENDING MESSAGES: " + Thread.currentThread() + timestampt());
         while(true) {
             //producer.send(message);
-
+            Thread.sleep(3000);
             producer.send(message);
-            Thread.sleep(1000);
         }
     }
 
