@@ -5,5 +5,9 @@ package com.azaharia.simplejmsspammer;
  */
 public enum TypeOf {
     TEXT,
-    BINARY
+    BINARY,
+    DURABLE,
+    NONDURABLE,
+
+
 }

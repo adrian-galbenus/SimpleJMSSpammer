@@ -1,5 +1,7 @@
 package com.azaharia.simplejmsspammer;
 
+import java.util.Arrays;
+import java.util.IntSummaryStatistics;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -8,12 +10,24 @@ import java.util.regex.Pattern;
  */
 
 public class ValidatingArgs {
+    private String nrConn;
+    private String gwUri;
+    private String gwMessage;
+    private String typeOfSub;
+    private String typeOfMsg;
 
     public ValidatingArgs(){
     }
 
+    public ValidatingArgs(String nrConn, String gwUri, String gwMessage, String typeOfSub, String typeOfMsg) {
+        this.nrConn = nrConn;
+        this.gwUri = gwUri;
+        this.gwMessage = gwMessage;
+        this.typeOfSub = typeOfSub;
+        this.typeOfMsg = typeOfMsg;
+    }
 
-    public boolean isValid(String nrConn, String gwUri, String gwMessage){
+    public boolean isValid(){
         if(!isInt(nrConn)){
             System.out.println("This is not an integer number!");
             return false;
@@ -64,4 +78,32 @@ public class ValidatingArgs {
         }
     }
 
+    public int nrOfConnection(){
+        return Integer.parseInt(nrConn);
+    }
+    public TypeOf getSubscription(){
+        if(!typeOfSub.equals("-d")){
+            return TypeOf.NONDURABLE;
+        }
+        return TypeOf.DURABLE;
+    }
+    public TypeOf getMessages(){
+        if(!typeOfMsg.equals("-t")){
+            return TypeOf.BINARY;
+        }
+        return TypeOf.TEXT;
+    }
+
+    public String getGwUri() {
+        return gwUri;
+    }
+
+    public String getGwMessage() {
+        if(gwMessage.equals("512")){
+            char[] data = new char[512];
+            Arrays.fill(data, 'a');
+            gwMessage = new String(data);
+        }
+        return gwMessage;
+    }
 }
